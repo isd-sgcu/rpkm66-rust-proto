@@ -1,3 +1,4 @@
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct User {
@@ -42,42 +43,49 @@ pub struct User {
     #[prost(bool, tag = "20")]
     pub is_got_ticket: bool,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct FindOneUserRequest {
     #[prost(string, tag = "1")]
     pub id: ::prost::alloc::string::String,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct FindOneUserResponse {
     #[prost(message, optional, tag = "1")]
     pub user: ::core::option::Option<User>,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct FindByStudentIdUserRequest {
     #[prost(string, tag = "1")]
     pub student_id: ::prost::alloc::string::String,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct FindByStudentIdUserResponse {
     #[prost(message, optional, tag = "1")]
     pub user: ::core::option::Option<User>,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct CreateUserRequest {
     #[prost(message, optional, tag = "1")]
     pub user: ::core::option::Option<User>,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct CreateUserResponse {
     #[prost(message, optional, tag = "1")]
     pub user: ::core::option::Option<User>,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UpdateUserRequest {
@@ -106,36 +114,42 @@ pub struct UpdateUserRequest {
     #[prost(string, tag = "12")]
     pub disease: ::prost::alloc::string::String,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UpdateUserResponse {
     #[prost(message, optional, tag = "1")]
     pub user: ::core::option::Option<User>,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DeleteUserRequest {
     #[prost(string, tag = "1")]
     pub id: ::prost::alloc::string::String,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DeleteUserResponse {
     #[prost(bool, tag = "1")]
     pub success: bool,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct CreateOrUpdateUserRequest {
     #[prost(message, optional, tag = "1")]
     pub user: ::core::option::Option<User>,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct CreateOrUpdateUserResponse {
     #[prost(message, optional, tag = "1")]
     pub user: ::core::option::Option<User>,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct VerifyUserRequest {
@@ -144,6 +158,7 @@ pub struct VerifyUserRequest {
     #[prost(string, tag = "2")]
     pub verify_type: ::prost::alloc::string::String,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct VerifyUserResponse {
@@ -151,6 +166,7 @@ pub struct VerifyUserResponse {
     pub success: bool,
 }
 /// ConfirmEstamp
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ConfirmEstampRequest {
@@ -159,16 +175,19 @@ pub struct ConfirmEstampRequest {
     #[prost(string, tag = "2")]
     pub e_id: ::prost::alloc::string::String,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ConfirmEstampResponse {}
 /// GetUserEstamp
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetUserEstampRequest {
     #[prost(string, tag = "1")]
     pub u_id: ::prost::alloc::string::String,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetUserEstampResponse {

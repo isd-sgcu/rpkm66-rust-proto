@@ -1,3 +1,4 @@
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Event {
@@ -16,72 +17,84 @@ pub struct Event {
     #[prost(string, tag = "7")]
     pub image_url: ::prost::alloc::string::String,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct FindAllEventRequest {
     #[prost(string, tag = "1")]
     pub id: ::prost::alloc::string::String,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct FindAllEventResponse {
     #[prost(message, repeated, tag = "1")]
     pub event: ::prost::alloc::vec::Vec<Event>,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct FindEventByIdRequest {
     #[prost(string, tag = "1")]
     pub id: ::prost::alloc::string::String,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct FindEventByIdResponse {
     #[prost(message, optional, tag = "1")]
     pub event: ::core::option::Option<Event>,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct CreateEventRequest {
     #[prost(message, optional, tag = "1")]
     pub event: ::core::option::Option<Event>,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct CreateEventResponse {
     #[prost(message, optional, tag = "1")]
     pub event: ::core::option::Option<Event>,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UpdateEventRequest {
     #[prost(message, optional, tag = "1")]
     pub event: ::core::option::Option<Event>,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UpdateEventResponse {
     #[prost(message, optional, tag = "1")]
     pub event: ::core::option::Option<Event>,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DeleteEventRequest {
     #[prost(string, tag = "1")]
     pub id: ::prost::alloc::string::String,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DeleteEventResponse {
     #[prost(bool, tag = "1")]
     pub success: bool,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct FindAllEventWithTypeRequest {
     #[prost(string, tag = "1")]
     pub event_type: ::prost::alloc::string::String,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct FindAllEventWithTypeResponse {

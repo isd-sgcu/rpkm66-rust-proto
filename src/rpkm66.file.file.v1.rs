@@ -1,3 +1,4 @@
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UploadRequest {
@@ -12,18 +13,21 @@ pub struct UploadRequest {
     #[prost(int32, tag = "5")]
     pub r#type: i32,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UploadResponse {
     #[prost(string, tag = "1")]
     pub url: ::prost::alloc::string::String,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetSignedUrlRequest {
     #[prost(string, tag = "1")]
     pub user_id: ::prost::alloc::string::String,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetSignedUrlResponse {

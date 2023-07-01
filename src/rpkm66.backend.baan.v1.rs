@@ -1,3 +1,4 @@
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Baan {
@@ -28,6 +29,7 @@ pub struct Baan {
     #[prost(string, tag = "13")]
     pub image_url: ::prost::alloc::string::String,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct BaanInfo {
@@ -40,27 +42,32 @@ pub struct BaanInfo {
     #[prost(string, tag = "4")]
     pub image_url: ::prost::alloc::string::String,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct FindAllBaanRequest {}
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct FindAllBaanResponse {
     #[prost(message, repeated, tag = "1")]
     pub baans: ::prost::alloc::vec::Vec<Baan>,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct FindOneBaanRequest {
     #[prost(string, tag = "1")]
     pub id: ::prost::alloc::string::String,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct FindOneBaanResponse {
     #[prost(message, optional, tag = "1")]
     pub baan: ::core::option::Option<Baan>,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
 pub enum BaanSize {

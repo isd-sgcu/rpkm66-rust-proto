@@ -1,3 +1,4 @@
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Group {
@@ -12,6 +13,7 @@ pub struct Group {
     #[prost(message, repeated, tag = "5")]
     pub baans: ::prost::alloc::vec::Vec<super::super::baan::v1::BaanInfo>,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UserInfo {
@@ -25,24 +27,28 @@ pub struct UserInfo {
     pub image_url: ::prost::alloc::string::String,
 }
 /// Find One
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct FindOneGroupRequest {
     #[prost(string, tag = "1")]
     pub user_id: ::prost::alloc::string::String,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct FindOneGroupResponse {
     #[prost(message, optional, tag = "1")]
     pub group: ::core::option::Option<Group>,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct FindByTokenGroupRequest {
     #[prost(string, tag = "1")]
     pub token: ::prost::alloc::string::String,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct FindByTokenGroupResponse {
@@ -53,6 +59,7 @@ pub struct FindByTokenGroupResponse {
     #[prost(message, optional, tag = "3")]
     pub leader: ::core::option::Option<UserInfo>,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UpdateGroupRequest {
@@ -61,12 +68,14 @@ pub struct UpdateGroupRequest {
     #[prost(string, tag = "2")]
     pub leader_id: ::prost::alloc::string::String,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UpdateGroupResponse {
     #[prost(message, optional, tag = "1")]
     pub group: ::core::option::Option<Group>,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct JoinGroupRequest {
@@ -75,12 +84,14 @@ pub struct JoinGroupRequest {
     #[prost(string, tag = "2")]
     pub user_id: ::prost::alloc::string::String,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct JoinGroupResponse {
     #[prost(message, optional, tag = "1")]
     pub group: ::core::option::Option<Group>,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DeleteMemberGroupRequest {
@@ -89,24 +100,28 @@ pub struct DeleteMemberGroupRequest {
     #[prost(string, tag = "2")]
     pub leader_id: ::prost::alloc::string::String,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DeleteMemberGroupResponse {
     #[prost(message, optional, tag = "1")]
     pub group: ::core::option::Option<Group>,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct LeaveGroupRequest {
     #[prost(string, tag = "1")]
     pub user_id: ::prost::alloc::string::String,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct LeaveGroupResponse {
     #[prost(message, optional, tag = "1")]
     pub group: ::core::option::Option<Group>,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct SelectBaanRequest {
@@ -115,6 +130,7 @@ pub struct SelectBaanRequest {
     #[prost(string, repeated, tag = "2")]
     pub baans: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct SelectBaanResponse {

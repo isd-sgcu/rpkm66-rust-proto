@@ -1,3 +1,4 @@
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct CheckinVerifyRequest {
@@ -6,6 +7,7 @@ pub struct CheckinVerifyRequest {
     #[prost(int32, tag = "2")]
     pub event_type: i32,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct CheckinVerifyResponse {
@@ -14,12 +16,14 @@ pub struct CheckinVerifyResponse {
     #[prost(int32, tag = "2")]
     pub checkin_type: i32,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct CheckinConfirmRequest {
     #[prost(string, tag = "1")]
     pub token: ::prost::alloc::string::String,
 }
+#[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct CheckinConfirmResponse {
