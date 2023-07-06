@@ -33,14 +33,20 @@ pub struct User {
     #[prost(string, tag = "15")]
     pub disease: ::prost::alloc::string::String,
     #[prost(string, tag = "16")]
-    pub image_url: ::prost::alloc::string::String,
-    #[prost(bool, tag = "17")]
-    pub can_select_baan: bool,
+    pub emer_phone: ::prost::alloc::string::String,
+    #[prost(string, tag = "17")]
+    pub emer_relation: ::prost::alloc::string::String,
     #[prost(bool, tag = "18")]
-    pub is_verify: bool,
+    pub want_bottle: bool,
     #[prost(string, tag = "19")]
-    pub baan_id: ::prost::alloc::string::String,
+    pub image_url: ::prost::alloc::string::String,
     #[prost(bool, tag = "20")]
+    pub can_select_baan: bool,
+    #[prost(bool, tag = "21")]
+    pub is_verify: bool,
+    #[prost(string, tag = "22")]
+    pub baan_id: ::prost::alloc::string::String,
+    #[prost(bool, tag = "23")]
     pub is_got_ticket: bool,
 }
 #[derive(serde::Deserialize, serde::Serialize)]
@@ -113,6 +119,12 @@ pub struct UpdateUserRequest {
     pub allergy_medicine: ::prost::alloc::string::String,
     #[prost(string, tag = "12")]
     pub disease: ::prost::alloc::string::String,
+    #[prost(string, tag = "13")]
+    pub emer_phone: ::prost::alloc::string::String,
+    #[prost(string, tag = "14")]
+    pub emer_relation: ::prost::alloc::string::String,
+    #[prost(bool, tag = "15")]
+    pub want_bottle: bool,
 }
 #[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
