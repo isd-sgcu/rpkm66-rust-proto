@@ -41,6 +41,8 @@ pub struct BaanInfo {
     pub name_en: ::prost::alloc::string::String,
     #[prost(string, tag = "4")]
     pub image_url: ::prost::alloc::string::String,
+    #[prost(enumeration = "BaanSize", tag = "5")]
+    pub size: i32,
 }
 #[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
