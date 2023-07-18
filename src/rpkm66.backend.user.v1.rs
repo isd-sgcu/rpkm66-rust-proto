@@ -48,6 +48,8 @@ pub struct User {
     pub baan_id: ::prost::alloc::string::String,
     #[prost(bool, tag = "23")]
     pub is_got_ticket: bool,
+    #[prost(string, tag = "24")]
+    pub personaliry_game: ::prost::alloc::string::String,
 }
 #[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
@@ -125,6 +127,8 @@ pub struct UpdateUserRequest {
     pub emer_relation: ::prost::alloc::string::String,
     #[prost(bool, tag = "15")]
     pub want_bottle: bool,
+    #[prost(string, tag = "16")]
+    pub personaliry_game: ::prost::alloc::string::String,
 }
 #[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
