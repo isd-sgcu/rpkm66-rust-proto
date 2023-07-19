@@ -49,7 +49,7 @@ pub struct User {
     #[prost(bool, tag = "23")]
     pub is_got_ticket: bool,
     #[prost(string, tag = "24")]
-    pub personaliry_game: ::prost::alloc::string::String,
+    pub personality_game: ::prost::alloc::string::String,
 }
 #[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
