@@ -33,6 +33,28 @@ pub mod rpkm66 {
             }
         }
     }
+    pub mod checkin {
+        pub mod event {
+            pub mod v1 {
+                include!("rpkm66.checkin.event.v1.rs");
+            }
+        }
+        pub mod namespace {
+            pub mod v1 {
+                include!("rpkm66.checkin.namespace.v1.rs");
+            }
+        }
+        pub mod staff {
+            pub mod v1 {
+                include!("rpkm66.checkin.staff.v1.rs");
+            }
+        }
+        pub mod user {
+            pub mod v1 {
+                include!("rpkm66.checkin.user.v1.rs");
+            }
+        }
+    }
     pub mod file {
         pub mod file {
             pub mod v1 {
