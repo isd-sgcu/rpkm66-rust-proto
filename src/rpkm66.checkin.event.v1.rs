@@ -19,6 +19,8 @@ pub struct UserEvent {
     pub event: ::core::option::Option<Event>,
     #[prost(bool, tag = "2")]
     pub is_taken: bool,
+    #[prost(int64, tag = "3")]
+    pub taken_at: i64,
 }
 ///
 /// GetAllEvents
@@ -70,14 +72,14 @@ pub struct GetEventsByUserIdResponse {
 #[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct GetEventsByNamespaceRequestId {
+pub struct GetEventsByNamespaceIdRequest {
     #[prost(string, tag = "1")]
     pub namespace_id: ::prost::alloc::string::String,
 }
 #[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct GetEventsByNamespaceResponseId {
+pub struct GetEventsByNamespaceIdResponse {
     #[prost(message, repeated, tag = "1")]
     pub events: ::prost::alloc::vec::Vec<Event>,
 }
@@ -196,7 +198,7 @@ pub mod event_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        pub async fn get_event_by_id(
+        pub async fn get_event_by_event_id(
             &mut self,
             request: impl tonic::IntoRequest<super::GetEventByEventIdRequest>,
         ) -> std::result::Result<
@@ -214,14 +216,14 @@ pub mod event_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/rpkm66.checkin.event.v1.EventService/GetEventById",
+                "/rpkm66.checkin.event.v1.EventService/GetEventByEventId",
             );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(
                     GrpcMethod::new(
                         "rpkm66.checkin.event.v1.EventService",
-                        "GetEventById",
+                        "GetEventByEventId",
                     ),
                 );
             self.inner.unary(req, path, codec).await
@@ -258,9 +260,9 @@ pub mod event_service_client {
         }
         pub async fn get_events_by_namespace_id(
             &mut self,
-            request: impl tonic::IntoRequest<super::GetEventsByNamespaceRequestId>,
+            request: impl tonic::IntoRequest<super::GetEventsByNamespaceIdRequest>,
         ) -> std::result::Result<
-            tonic::Response<super::GetEventsByNamespaceResponseId>,
+            tonic::Response<super::GetEventsByNamespaceIdResponse>,
             tonic::Status,
         > {
             self.inner
@@ -302,7 +304,7 @@ pub mod event_service_server {
             tonic::Response<super::GetAllEventsResponse>,
             tonic::Status,
         >;
-        async fn get_event_by_id(
+        async fn get_event_by_event_id(
             &self,
             request: tonic::Request<super::GetEventByEventIdRequest>,
         ) -> std::result::Result<
@@ -318,9 +320,9 @@ pub mod event_service_server {
         >;
         async fn get_events_by_namespace_id(
             &self,
-            request: tonic::Request<super::GetEventsByNamespaceRequestId>,
+            request: tonic::Request<super::GetEventsByNamespaceIdRequest>,
         ) -> std::result::Result<
-            tonic::Response<super::GetEventsByNamespaceResponseId>,
+            tonic::Response<super::GetEventsByNamespaceIdResponse>,
             tonic::Status,
         >;
     }
@@ -449,13 +451,13 @@ pub mod event_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/rpkm66.checkin.event.v1.EventService/GetEventById" => {
+                "/rpkm66.checkin.event.v1.EventService/GetEventByEventId" => {
                     #[allow(non_camel_case_types)]
-                    struct GetEventByIdSvc<T: EventService>(pub Arc<T>);
+                    struct GetEventByEventIdSvc<T: EventService>(pub Arc<T>);
                     impl<
                         T: EventService,
                     > tonic::server::UnaryService<super::GetEventByEventIdRequest>
-                    for GetEventByIdSvc<T> {
+                    for GetEventByEventIdSvc<T> {
                         type Response = super::GetEventByEventIdResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
@@ -467,7 +469,7 @@ pub mod event_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).get_event_by_id(request).await
+                                (*inner).get_event_by_event_id(request).await
                             };
                             Box::pin(fut)
                         }
@@ -479,7 +481,7 @@ pub mod event_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
-                        let method = GetEventByIdSvc(inner);
+                        let method = GetEventByEventIdSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
@@ -546,16 +548,16 @@ pub mod event_service_server {
                     struct GetEventsByNamespaceIdSvc<T: EventService>(pub Arc<T>);
                     impl<
                         T: EventService,
-                    > tonic::server::UnaryService<super::GetEventsByNamespaceRequestId>
+                    > tonic::server::UnaryService<super::GetEventsByNamespaceIdRequest>
                     for GetEventsByNamespaceIdSvc<T> {
-                        type Response = super::GetEventsByNamespaceResponseId;
+                        type Response = super::GetEventsByNamespaceIdResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
                             tonic::Status,
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::GetEventsByNamespaceRequestId>,
+                            request: tonic::Request<super::GetEventsByNamespaceIdRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {

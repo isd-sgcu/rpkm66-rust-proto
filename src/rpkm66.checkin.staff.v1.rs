@@ -28,8 +28,6 @@ pub struct GenerateSignInTokenRequest {
     pub staff_user_id: ::prost::alloc::string::String,
     #[prost(string, tag = "2")]
     pub event_id: ::prost::alloc::string::String,
-    #[prost(int64, tag = "3")]
-    pub end_at: i64,
 }
 #[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]

@@ -14,7 +14,7 @@ pub struct AddEventRequest {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct AddEventResponse {
     #[prost(message, optional, tag = "1")]
-    pub event: ::core::option::Option<super::super::event::v1::UserEvent>,
+    pub event: ::core::option::Option<super::super::event::v1::Event>,
 }
 /// Generated client implementations.
 pub mod user_service_client {
