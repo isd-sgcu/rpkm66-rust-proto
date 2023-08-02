@@ -127,8 +127,6 @@ pub struct UpdateUserRequest {
     pub emer_relation: ::prost::alloc::string::String,
     #[prost(bool, tag = "15")]
     pub want_bottle: bool,
-    #[prost(string, tag = "16")]
-    pub personality_game: ::prost::alloc::string::String,
 }
 #[derive(serde::Deserialize, serde::Serialize)]
 #[allow(clippy::derive_partial_eq_without_eq)]
